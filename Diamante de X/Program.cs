@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using System.Text;
+﻿using System.Text;
 
 namespace Diamante_de_X
 {
@@ -7,26 +6,10 @@ namespace Diamante_de_X
     {
         static void Main(string[] args)
         {
-
-
             int numero = 0;
-            while (true)
-            {
-                Console.Clear();
-                Console.WriteLine("Escreva um numero Impar");
-                bool ConseguiuConverter = int.TryParse(Console.ReadLine(), out numero);
-
-                if (ConseguiuConverter && numero % 2 != 0)
-                {
-                    break;
-                }
-
-                else
-                    continue;
-            }
-
-
+            numero = ValidacaoEntrada.ValidacaoEntradaFuncao(numero);
             
+
 
 
             StringBuilder X = new StringBuilder("X");
