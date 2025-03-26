@@ -18,7 +18,10 @@ namespace Diamante_de_X
                 }
 
                 else
-                    continue;
+                {
+                    Console.WriteLine("Entrada Invalida, aperte ENTER para digitar novamente");
+                }
+                    
             }
 
             return numero;
