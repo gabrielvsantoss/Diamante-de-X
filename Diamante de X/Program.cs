@@ -50,15 +50,26 @@ namespace Diamante_de_X
 
             Console.WriteLine("");
 
-            quantidade = quantidadeEspacos +1;
-            int quantidade2 = X.Length - 2;
-            for (int i = 1; i <= numero; i += 2)
-            { 
-                         
-                    Console.Write($"{X} \n");
 
-                    quantidade2-=  2;
-                     X.Length = quantidade2;
+
+            StringBuilder espacosParteDeBaixo = new StringBuilder("");
+
+
+            int quantidade2 = X.Length;
+
+
+            for (int i = 1; i < numero; i += 2)
+            {
+
+                quantidade2 -= 2;
+                X.Length = quantidade2;
+                espacosParteDeBaixo.Append(" ");
+                Console.Write(espacosParteDeBaixo);
+                Console.Write($"{X} \n");
+
+
+
+                
 
             }
 
