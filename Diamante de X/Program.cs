@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Linq.Expressions;
-using System.Text;
+﻿using System.Text;
 
 namespace Diamante_de_X
 {
@@ -33,10 +31,6 @@ namespace Diamante_de_X
 
             for (int i = 1; i <= numero; i += 2)
             {
-
-
-
-
                 if (i != numero)
                 {
                     Console.Write($"{X} \n");
@@ -47,17 +41,28 @@ namespace Diamante_de_X
                     quantidade--;
                 }
 
-
                 else
                 {
-
                     Console.Write($"{X}");
-
-
-
                 }
 
             }
+
+            Console.WriteLine("");
+
+            quantidade = quantidadeEspacos +1;
+            int quantidade2 = X.Length - 2;
+            for (int i = 1; i <= numero; i += 2)
+            { 
+                         
+                    Console.Write($"{X} \n");
+
+                    quantidade2-=  2;
+                     X.Length = quantidade2;
+
+            }
+
+
 
             Console.ReadLine();
         }
