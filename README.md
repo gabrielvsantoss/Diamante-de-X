@@ -8,4 +8,3 @@
 - **Realização de um diamante totalmente proporcional**: O sistema realiza a construção de um diamante completo.
 
 
--
