@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Drawing;
+using System.Text;
 
 namespace Diamante_de_X
 {
@@ -6,28 +7,46 @@ namespace Diamante_de_X
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escreva um numero");
-            int numero = Convert.ToInt32(Console.ReadLine());
+
+
+            int numero = 0;
+            while (true)
+            {
+                Console.Clear();
+                Console.WriteLine("Escreva um numero Impar");
+                bool ConseguiuConverter = int.TryParse(Console.ReadLine(), out numero);
+
+                if (ConseguiuConverter && numero % 2 != 0)
+                {
+                    break;
+                }
+
+                else
+                    continue;
+            }
+
+
+            
 
 
             StringBuilder X = new StringBuilder("X");
 
             string x = "X";
-            int quantidade = 0;
+            int quantidadeDeXPorLinha = 0;
            
 
             
                 int quantidadeEspacos = numero / 2;
-                StringBuilder espacos = new StringBuilder("");
+                StringBuilder espacosParteDeCima = new StringBuilder("");
 
                 for (int i = 0; i < quantidadeEspacos; i++)
                 {
-                    espacos.Append(" ");
+                    espacosParteDeCima.Append(" ");
                 }
 
-            Console.Write(espacos);
+            Console.Write(espacosParteDeCima);
 
-            quantidade = quantidadeEspacos - 1;
+            quantidadeDeXPorLinha = quantidadeEspacos - 1;
 
             for (int i = 1; i <= numero; i += 2)
             {
@@ -36,9 +55,9 @@ namespace Diamante_de_X
                     Console.Write($"{X} \n");
                     X.Append(x);
                     X.Append(x);
-                    espacos.Length = quantidade;
-                    Console.Write(espacos);
-                    quantidade--;
+                    espacosParteDeCima.Length = quantidadeDeXPorLinha;
+                    Console.Write(espacosParteDeCima);
+                    quantidadeDeXPorLinha--;
                 }
 
                 else
@@ -49,31 +68,20 @@ namespace Diamante_de_X
             }
 
             Console.WriteLine("");
-
-
-
             StringBuilder espacosParteDeBaixo = new StringBuilder("");
 
-
-            int quantidade2 = X.Length;
+            
+             quantidadeDeXPorLinha = X.Length;
 
 
             for (int i = 1; i < numero; i += 2)
             {
-
-                quantidade2 -= 2;
-                X.Length = quantidade2;
+                quantidadeDeXPorLinha -= 2;
+                X.Length = quantidadeDeXPorLinha;
                 espacosParteDeBaixo.Append(" ");
                 Console.Write(espacosParteDeBaixo);
                 Console.Write($"{X} \n");
-
-
-
-                
-
             }
-
-
 
             Console.ReadLine();
         }
